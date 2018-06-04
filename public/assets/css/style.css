@@ -1,0 +1,2985 @@
+@charset "UTF-8";
+/* -------------------------------------------------------------------------
+
+		vars.sass
+
+		scssファイル内で使う変数を定義
+
+------------------------------------------------------------------------- */
+/* font size
+------------------------------------------------- */
+/* width
+------------------------------------------------- */
+/* color
+------------------------------------------------- */
+/* text color
+------------------------------------------------- */
+/* font
+------------------------------------------------- */
+/* $font_ja : arial, 'Noto Sans Japanese', 'YuGothic', 'Yu Gothic', '游ゴシック', '游ゴシック体', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif; */
+/* mixin
+------------------------------------------------- */
+/* 角丸 */
+/* テキスト縦中央寄せ */
+/* テキスト前アイコン */
+/* テキスト前アイコン */
+/* ボタン・アイコン */
+/* フォームアイコン */
+/* ドロップシャドウ */
+/* -------------------------------------------------------------------------
+
+		reset.sass
+
+		要素のデフォルトスタイル、フォントサイズのリセット
+
+------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------
+
+		style reset
+
+------------------------------------------------------------------------- */
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video, main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 12pt;
+  vertical-align: baseline;
+  background: transparent;
+  color: #666; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+input, textarea {
+  margin: 0;
+  padding: 0; }
+
+small {
+  font-size: smaller; }
+
+sup {
+  font-size: 0.7em;
+  vertical-align: top; }
+
+sub {
+  font-size: 0.7em;
+  vertical-align: baseline; }
+
+/* -------------------------------------------------------------------------
+
+		font styles
+
+------------------------------------------------------------------------- */
+/* YUI 3.9.1 (build 5852) Copyright 2013 Yahoo! Inc. http://yuilibrary.com/license/ */
+/**
+ * Percents could work for IE, but for backCompat purposes, we are using keywords.
+ * x-small is for IE6/7 quirks mode.
+ */
+body {
+  font: 13px/1.231 arial,sans-serif;
+  *font-size: small;
+  /* for IE */
+  *font: x-small;
+  /* for IE in quirks mode */ }
+
+/**
+ * Nudge down to get to 13px equivalent for these form elements
+ */
+select,
+input,
+button,
+textarea {
+  font: 99% arial,sans-serif; }
+
+/**
+ * To help tables remember to inherit
+ */
+table {
+  font-size: inherit;
+  font: 100%; }
+
+/**
+ * Bump up IE to get to 13px equivalent for these fixed-width elements
+ */
+pre,
+code,
+kbd,
+samp,
+tt {
+  font-family: monospace;
+  *font-size: 108%;
+  line-height: 100%; }
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssfonts {
+  display: none; }
+
+/* -------------------------------------------------------------------------
+
+		icon.sass
+
+		フォントアイコンを定義
+
+------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------
+
+		util.sass
+
+		案件に依存せず汎用的に使うClassを定義
+
+------------------------------------------------------------------------- */
+/* float clear
+------------------------------------------------- */
+/*for modern browser*/
+.clear_fix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden; }
+
+/*for IE 5.5-7*/
+.clear_fix {
+  zoom: 1; }
+
+.clear_both {
+  clear: both;
+  height: 1px;
+  font-size: 1px;
+  text-align: center;
+  line-height: 0; }
+
+.clear {
+  clear: both; }
+
+/* float
+------------------------------------------------- */
+.float_r {
+  float: right;
+  display: inline; }
+
+.float_l {
+  float: left;
+  display: inline; }
+
+/* margin + padding （0から5刻みでクラスを定義 ex: mb0, mb5, mb10...）
+------------------------------------------------- */
+.mb-50 {
+  margin-bottom: -50px !important; }
+
+.mt-50 {
+  margin-top: -50px !important; }
+
+.mr-50 {
+  margin-right: -50px !important; }
+
+.ml-50 {
+  margin-left: -50px !important; }
+
+.mb-45 {
+  margin-bottom: -45px !important; }
+
+.mt-45 {
+  margin-top: -45px !important; }
+
+.mr-45 {
+  margin-right: -45px !important; }
+
+.ml-45 {
+  margin-left: -45px !important; }
+
+.mb-40 {
+  margin-bottom: -40px !important; }
+
+.mt-40 {
+  margin-top: -40px !important; }
+
+.mr-40 {
+  margin-right: -40px !important; }
+
+.ml-40 {
+  margin-left: -40px !important; }
+
+.mb-35 {
+  margin-bottom: -35px !important; }
+
+.mt-35 {
+  margin-top: -35px !important; }
+
+.mr-35 {
+  margin-right: -35px !important; }
+
+.ml-35 {
+  margin-left: -35px !important; }
+
+.mb-30 {
+  margin-bottom: -30px !important; }
+
+.mt-30 {
+  margin-top: -30px !important; }
+
+.mr-30 {
+  margin-right: -30px !important; }
+
+.ml-30 {
+  margin-left: -30px !important; }
+
+.mb-25 {
+  margin-bottom: -25px !important; }
+
+.mt-25 {
+  margin-top: -25px !important; }
+
+.mr-25 {
+  margin-right: -25px !important; }
+
+.ml-25 {
+  margin-left: -25px !important; }
+
+.mb-20 {
+  margin-bottom: -20px !important; }
+
+.mt-20 {
+  margin-top: -20px !important; }
+
+.mr-20 {
+  margin-right: -20px !important; }
+
+.ml-20 {
+  margin-left: -20px !important; }
+
+.mb-15 {
+  margin-bottom: -15px !important; }
+
+.mt-15 {
+  margin-top: -15px !important; }
+
+.mr-15 {
+  margin-right: -15px !important; }
+
+.ml-15 {
+  margin-left: -15px !important; }
+
+.mb-10 {
+  margin-bottom: -10px !important; }
+
+.mt-10 {
+  margin-top: -10px !important; }
+
+.mr-10 {
+  margin-right: -10px !important; }
+
+.ml-10 {
+  margin-left: -10px !important; }
+
+.mb-5 {
+  margin-bottom: -5px !important; }
+
+.mt-5 {
+  margin-top: -5px !important; }
+
+.mr-5 {
+  margin-right: -5px !important; }
+
+.ml-5 {
+  margin-left: -5px !important; }
+
+.mb0 {
+  margin-bottom: 0px !important; }
+
+.mt0 {
+  margin-top: 0px !important; }
+
+.mr0 {
+  margin-right: 0px !important; }
+
+.ml0 {
+  margin-left: 0px !important; }
+
+.mb5 {
+  margin-bottom: 5px !important; }
+
+.mt5 {
+  margin-top: 5px !important; }
+
+.mr5 {
+  margin-right: 5px !important; }
+
+.ml5 {
+  margin-left: 5px !important; }
+
+.mb10 {
+  margin-bottom: 10px !important; }
+
+.mt10 {
+  margin-top: 10px !important; }
+
+.mr10 {
+  margin-right: 10px !important; }
+
+.ml10 {
+  margin-left: 10px !important; }
+
+.mb15 {
+  margin-bottom: 15px !important; }
+
+.mt15 {
+  margin-top: 15px !important; }
+
+.mr15 {
+  margin-right: 15px !important; }
+
+.ml15 {
+  margin-left: 15px !important; }
+
+.mb20 {
+  margin-bottom: 20px !important; }
+
+.mt20 {
+  margin-top: 20px !important; }
+
+.mr20 {
+  margin-right: 20px !important; }
+
+.ml20 {
+  margin-left: 20px !important; }
+
+.mb25 {
+  margin-bottom: 25px !important; }
+
+.mt25 {
+  margin-top: 25px !important; }
+
+.mr25 {
+  margin-right: 25px !important; }
+
+.ml25 {
+  margin-left: 25px !important; }
+
+.mb30 {
+  margin-bottom: 30px !important; }
+
+.mt30 {
+  margin-top: 30px !important; }
+
+.mr30 {
+  margin-right: 30px !important; }
+
+.ml30 {
+  margin-left: 30px !important; }
+
+.mb35 {
+  margin-bottom: 35px !important; }
+
+.mt35 {
+  margin-top: 35px !important; }
+
+.mr35 {
+  margin-right: 35px !important; }
+
+.ml35 {
+  margin-left: 35px !important; }
+
+.mb40 {
+  margin-bottom: 40px !important; }
+
+.mt40 {
+  margin-top: 40px !important; }
+
+.mr40 {
+  margin-right: 40px !important; }
+
+.ml40 {
+  margin-left: 40px !important; }
+
+.mb45 {
+  margin-bottom: 45px !important; }
+
+.mt45 {
+  margin-top: 45px !important; }
+
+.mr45 {
+  margin-right: 45px !important; }
+
+.ml45 {
+  margin-left: 45px !important; }
+
+.mb50 {
+  margin-bottom: 50px !important; }
+
+.mt50 {
+  margin-top: 50px !important; }
+
+.mr50 {
+  margin-right: 50px !important; }
+
+.ml50 {
+  margin-left: 50px !important; }
+
+.mb55 {
+  margin-bottom: 55px !important; }
+
+.mt55 {
+  margin-top: 55px !important; }
+
+.mr55 {
+  margin-right: 55px !important; }
+
+.ml55 {
+  margin-left: 55px !important; }
+
+.mb60 {
+  margin-bottom: 60px !important; }
+
+.mt60 {
+  margin-top: 60px !important; }
+
+.mr60 {
+  margin-right: 60px !important; }
+
+.ml60 {
+  margin-left: 60px !important; }
+
+.mb65 {
+  margin-bottom: 65px !important; }
+
+.mt65 {
+  margin-top: 65px !important; }
+
+.mr65 {
+  margin-right: 65px !important; }
+
+.ml65 {
+  margin-left: 65px !important; }
+
+.mb70 {
+  margin-bottom: 70px !important; }
+
+.mt70 {
+  margin-top: 70px !important; }
+
+.mr70 {
+  margin-right: 70px !important; }
+
+.ml70 {
+  margin-left: 70px !important; }
+
+.mb75 {
+  margin-bottom: 75px !important; }
+
+.mt75 {
+  margin-top: 75px !important; }
+
+.mr75 {
+  margin-right: 75px !important; }
+
+.ml75 {
+  margin-left: 75px !important; }
+
+.mb80 {
+  margin-bottom: 80px !important; }
+
+.mt80 {
+  margin-top: 80px !important; }
+
+.mr80 {
+  margin-right: 80px !important; }
+
+.ml80 {
+  margin-left: 80px !important; }
+
+.pb0 {
+  padding-bottom: 0px !important; }
+
+.pt0 {
+  padding-top: 0px !important; }
+
+.pr0 {
+  padding-right: 0px !important; }
+
+.pl0 {
+  padding-left: 0px !important; }
+
+.pb5 {
+  padding-bottom: 5px !important; }
+
+.pt5 {
+  padding-top: 5px !important; }
+
+.pr5 {
+  padding-right: 5px !important; }
+
+.pl5 {
+  padding-left: 5px !important; }
+
+.pb10 {
+  padding-bottom: 10px !important; }
+
+.pt10 {
+  padding-top: 10px !important; }
+
+.pr10 {
+  padding-right: 10px !important; }
+
+.pl10 {
+  padding-left: 10px !important; }
+
+.pb15 {
+  padding-bottom: 15px !important; }
+
+.pt15 {
+  padding-top: 15px !important; }
+
+.pr15 {
+  padding-right: 15px !important; }
+
+.pl15 {
+  padding-left: 15px !important; }
+
+.pb20 {
+  padding-bottom: 20px !important; }
+
+.pt20 {
+  padding-top: 20px !important; }
+
+.pr20 {
+  padding-right: 20px !important; }
+
+.pl20 {
+  padding-left: 20px !important; }
+
+.pb25 {
+  padding-bottom: 25px !important; }
+
+.pt25 {
+  padding-top: 25px !important; }
+
+.pr25 {
+  padding-right: 25px !important; }
+
+.pl25 {
+  padding-left: 25px !important; }
+
+.pb30 {
+  padding-bottom: 30px !important; }
+
+.pt30 {
+  padding-top: 30px !important; }
+
+.pr30 {
+  padding-right: 30px !important; }
+
+.pl30 {
+  padding-left: 30px !important; }
+
+.pb35 {
+  padding-bottom: 35px !important; }
+
+.pt35 {
+  padding-top: 35px !important; }
+
+.pr35 {
+  padding-right: 35px !important; }
+
+.pl35 {
+  padding-left: 35px !important; }
+
+.pb40 {
+  padding-bottom: 40px !important; }
+
+.pt40 {
+  padding-top: 40px !important; }
+
+.pr40 {
+  padding-right: 40px !important; }
+
+.pl40 {
+  padding-left: 40px !important; }
+
+.pb45 {
+  padding-bottom: 45px !important; }
+
+.pt45 {
+  padding-top: 45px !important; }
+
+.pr45 {
+  padding-right: 45px !important; }
+
+.pl45 {
+  padding-left: 45px !important; }
+
+.pb50 {
+  padding-bottom: 50px !important; }
+
+.pt50 {
+  padding-top: 50px !important; }
+
+.pr50 {
+  padding-right: 50px !important; }
+
+.pl50 {
+  padding-left: 50px !important; }
+
+.pb55 {
+  padding-bottom: 55px !important; }
+
+.pt55 {
+  padding-top: 55px !important; }
+
+.pr55 {
+  padding-right: 55px !important; }
+
+.pl55 {
+  padding-left: 55px !important; }
+
+.pb60 {
+  padding-bottom: 60px !important; }
+
+.pt60 {
+  padding-top: 60px !important; }
+
+.pr60 {
+  padding-right: 60px !important; }
+
+.pl60 {
+  padding-left: 60px !important; }
+
+.pb65 {
+  padding-bottom: 65px !important; }
+
+.pt65 {
+  padding-top: 65px !important; }
+
+.pr65 {
+  padding-right: 65px !important; }
+
+.pl65 {
+  padding-left: 65px !important; }
+
+.pb70 {
+  padding-bottom: 70px !important; }
+
+.pt70 {
+  padding-top: 70px !important; }
+
+.pr70 {
+  padding-right: 70px !important; }
+
+.pl70 {
+  padding-left: 70px !important; }
+
+.pb75 {
+  padding-bottom: 75px !important; }
+
+.pt75 {
+  padding-top: 75px !important; }
+
+.pr75 {
+  padding-right: 75px !important; }
+
+.pl75 {
+  padding-left: 75px !important; }
+
+.pb80 {
+  padding-bottom: 80px !important; }
+
+.pt80 {
+  padding-top: 80px !important; }
+
+.pr80 {
+  padding-right: 80px !important; }
+
+.pl80 {
+  padding-left: 80px !important; }
+
+/* align
+------------------------------------------------- */
+.align_l {
+  text-align: left !important; }
+
+.align_r {
+  text-align: right !important; }
+
+.align_c {
+  text-align: center !important; }
+
+/* vertical align
+------------------------------------------------- */
+.valign_m {
+  vertical-align: middle; }
+
+.valign_t {
+  vertical-align: top; }
+
+.valign_b {
+  vertical-align: bottom; }
+
+/* font
+------------------------------------------------- */
+.smaller {
+  /* font-size:smaller !important; */
+  font-size: 85% !important; }
+
+.larger {
+  font-size: larger !important; }
+
+.bold {
+  font-weight: bold !important; }
+
+.weight_normal {
+  font-weight: normal !important; }
+
+.style_normal {
+  font-style: normal !important; }
+
+/* fluid image
+------------------------------------------------- */
+.fluid_img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
+  /* IE8 */ }
+
+/* display
+------------------------------------------------- */
+.block {
+  display: block !important; }
+
+.inline {
+  display: inline !important; }
+
+.table {
+  display: table !important; }
+
+.table_cell {
+  display: table-cell !important; }
+
+/* justify layout
+Usage:
+<ul class="just_layout">
+	<li class ="just_item"></li>
+</ul>
+------------------------------------------------- */
+.just_layout {
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  zoom: 1;
+  display: block;
+  line-height: 0; }
+  .just_layout:after {
+    line-height: 0;
+    visibility: hidden;
+    content: "";
+    display: inline-block;
+    width: 100%; }
+  .just_layout .just_item {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    line-height: normal; }
+
+* html .just_layout .just_item {
+  display: inline;
+  zoom: 1; }
+
+*:first-child + html .just_layout .just_item {
+  display: inline;
+  zoom: 1; }
+
+/* list
+------------------------------------------------- */
+.list_disc {
+  margin-left: 1.2em;
+  list-style: disc; }
+
+.list_square {
+  margin-left: 1.2em;
+  list-style: square; }
+
+.list_decimal {
+  margin-left: 1.7em;
+  list-style: decimal; }
+
+.list_decimal_zero {
+  margin-left: 2.3em;
+  list-style: decimal-leading-zero; }
+
+/* list style (IE8以上)
+------------------------------------------------- */
+/* ---- ※ ---- */
+.list_asterisk > li {
+  text-indent: -1.3em;
+  margin-left: 1.3em; }
+  .list_asterisk > li:before {
+    content: "※ "; }
+  .list_asterisk > li > * {
+    text-indent: 0; }
+
+/* ---- ・ ---- */
+.list_dot > li {
+  text-indent: -1em;
+  margin-left: 1em; }
+  .list_dot > li:before {
+    content: "・"; }
+  .list_dot > li > * {
+    text-indent: 0; }
+
+/* ---- ● ---- */
+.list_circle > li {
+  text-indent: -1em;
+  margin-left: 1em; }
+  .list_circle > li:before {
+    content: "●"; }
+  .list_circle > li > * {
+    text-indent: 0; }
+
+/* ---- 1. ---- */
+.list_decimal_01 > li {
+  counter-increment: decimal_01;
+  margin-left: 1.2em;
+  text-indent: -1.2em; }
+  .list_decimal_01 > li:before {
+    content: counter(decimal_01) ". "; }
+  .list_decimal_01 > li > * {
+    text-indent: 0; }
+
+/* ---- (1) ---- */
+.list_decimal_02 > li {
+  counter-increment: decimal_02;
+  margin-left: 1.5em;
+  text-indent: -1.5em; }
+  .list_decimal_02 > li:before {
+    content: "(" counter(decimal_02) ") "; }
+  .list_decimal_02 > li > * {
+    text-indent: 0; }
+
+/* ---- [1] ---- */
+.list_decimal_03 > li {
+  counter-increment: decimal_03;
+  margin-left: 1.5em;
+  text-indent: -1.5em; }
+  .list_decimal_03 > li:before {
+    content: "[" counter(decimal_03) "] "; }
+  .list_decimal_03 > li > * {
+    text-indent: 0; }
+
+/* ---- 丸数字 ---- */
+.list_decimal_04 > li {
+  counter-increment: decimal_04;
+  margin-left: 1.7em;
+  text-indent: -1.7em; }
+  .list_decimal_04 > li:before {
+    content: counter(decimal_04);
+    border: 1px solid #000;
+    padding: 0 3px;
+    font-size: 10px;
+    margin-right: 5px;
+    text-align: center;
+    line-height: 1; }
+  .list_decimal_04 > li > * {
+    text-indent: 0; }
+
+/* ---- upper alpha ---- */
+.list_upper_alpha_01 > li {
+  counter-increment: upper_alpha_01;
+  margin-left: 1.5em;
+  text-indent: -1.5em; }
+  .list_upper_alpha_01 > li:before {
+    content: counter(upper_alpha_01, upper-alpha) ") "; }
+  .list_upper_alpha_01 > li > * {
+    text-indent: 0; }
+
+/* 注釈 (IE8以上)
+------------------------------------------------- */
+/* ---- ※（注釈） ---- */
+.notes {
+  margin-left: 1.3em;
+  text-indent: -1.3em;
+  /* margin-top:0.5em;
+	margin-bottom:0.5em; */ }
+  .notes:before {
+    content: "※ "; }
+  .notes > * {
+    text-indent: 0; }
+
+/* ---- ※n （番号付き注釈）---- */
+.notes_num {
+  counter-increment: decimal_notes;
+  margin-left: 2em;
+  text-indent: -2em;
+  /* margin-top:0.5em;
+	margin-bottom:0.5em; */ }
+  .notes_num:before {
+    content: "※" counter(decimal_notes) " "; }
+  .notes_num > * {
+    text-indent: 0; }
+
+/* 章番号用mixin (IE8以上)
+usage:
+■キャプションに章番号をつける場合
+$counterName: oreoreCounter;
+.parent-section {
+	@include resetCounter($counterName);
+	h2 {
+		@include addCounter($counterName, '第', '章');
+	}
+}
+■入れ子になってるリストに通し番号(1-1-1など）を付ける場合
+$counterName: listCounter;
+ol {
+	@include resetCounter($counterName);
+	li {
+		@include addCounters($counterName, '-');
+	}
+}
+------------------------------------------------- */
+/* グリッドレイアウト用mixin (IE8以上)
+usage:
+■12分割で間隔が20pxのグリッドのクラスを作る場合
+・SASS
+@include grid_system(12, 20px);
+・HTML
+<div class="grid_system_12">  ← このdivへの幅指定はNG
+	<div class="grid_6"></div> ┐
+	<div class="grid_3"></div> ├ 子要素は合計が12になるようにクラス名を付ける
+	<div class="grid_3"></div> ┘
+</div>
+------------------------------------------------- */
+/* -------------------------------------------------------------------------
+
+		module.sass
+
+		見出し、ボタン、表など繰り返し使うパーツ（モジュール）のスタイルを定義
+
+------------------------------------------------------------------------- */
+p, li, dt, dd {
+  line-height: 1.7; }
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto; }
+
+input, textarea, select {
+  border: 1px solid #C7B299;
+  padding: 8px 8px 6px 6px; }
+
+/* title
+------------------------------------------------- */
+/* box
+------------------------------------------------- */
+/* text
+------------------------------------------------- */
+.caption {
+  font-size: 11pt; }
+
+.notice {
+  color: #999;
+  font-size: 11pt; }
+
+.warnning {
+  color: #F15A24;
+  font-size: 11pt;
+  background-image: url("../img/icon_red_notice.svg");
+  background-repeat: no-repeat;
+  padding-left: 1.5em;
+  margin: 0 auto; }
+
+.red_notice {
+  color: #ED1C24;
+  font-size: 11pt; }
+
+.after_heading_text {
+  margin-left: 20px;
+  font-weight: normal;
+  position: relative;
+  top: -2px; }
+
+.unit {
+  font-size: 10pt; }
+
+/* text link
+------------------------------------------------- */
+a {
+  text-decoration: none;
+  color: #666; }
+  a:hover {
+    text-decoration: none;
+    color: #C69C6D; }
+
+.link {
+  color: #8C6239; }
+
+/* text_icon
+------------------------------------------------- */
+.text_icon {
+  border: 1px solid #754C24;
+  color: #754C24;
+  padding: 2px 4px;
+  font-size: 9pt; }
+
+/* btn
+------------------------------------------------- */
+.btn {
+  background-color: #754C24;
+  color: #fff;
+  padding: 7px 15px;
+  margin: 0 3px;
+  border: none;
+  border-radius: 5px; }
+
+.btn.plus {
+  background-image: url("../img/icon_white_plus.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn.next {
+  background-image: url("../img/arrow_white_right.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn.prev {
+  background-image: url("../img/arrow_white_left.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn.finish {
+  background-image: url("../img/icon_white_finish.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn.save {
+  background-image: url("../img/icon_white_save.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn.mypage {
+  background-image: url("../img/icon_white_mypage.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn.facebook {
+  background-image: url("../img/icon_white_facebook.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn.twitter {
+  background-image: url("../img/icon_white_twitter.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn.login {
+  background-image: url("../img/icon_white_login.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn.mailsend {
+  background-image: url("../img/icon_white_mailsend.svg");
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn.mail {
+  background-image: url("../img/icon_white_mail.svg");
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn.close {
+  background-color: #999;
+  background-image: url("../img/icon_white_close.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.btn_text {
+  border: none;
+  background: none;
+  padding: 8px; }
+
+button[disabled].btn {
+  background-color: #ddd; }
+
+/* --- スタイル --- */
+/* --- サイズ --- */
+/* --- アイコン別設定 --- */
+/* --- btn_box --- */
+/* mixin balloon_title
+------------------------------------------------- */
+/* text color
+------------------------------------------------- */
+/* font
+------------------------------------------------- */
+/* form_single
+------------------------------------------------- */
+.form_single label {
+  font-size: 11pt; }
+
+.form_single input[type="text"], .form_single input[type="password"], .form_single select, .form_single textarea {
+  padding: 8px;
+  width: 90%; }
+
+.form_single :placeholder-shown {
+  color: #ccc; }
+
+.form_single :-moz-placeholder {
+  color: #ccc; }
+
+.form_single ::-moz-placeholder {
+  color: #ccc; }
+
+.form_single ::-webkit-input-placeholder {
+  color: #ccc; }
+
+.form_single :-ms-input-placeholder {
+  color: #ccc; }
+
+.form_single input.err {
+  border-color: #ED1C24; }
+
+.form_single p.err {
+  font-size: 10pt;
+  color: #ED1C24;
+  background-image: url("../img/icon_red_notice.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.form_single .col {
+  margin-bottom: 15px; }
+
+.form_single span.required {
+  font-size: 10pt;
+  margin-left: 10px;
+  color: #ED1C24; }
+
+.err {
+  color: #ED1C24; }
+
+.err_message {
+  color: #ED1C24;
+  margin-bottom: 10px;
+  background-image: url("../img/icon_red_notice.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 1em center;
+  padding-left: 2.5em; }
+
+.check .form_single input[type="text"], .check .form_single input[type="password"], .check .form_single select, .check .form_single textarea {
+  background-color: #f5f5f5;
+  border-color: #F4F0EB; }
+
+.tool_tip {
+  background-color: #F4F0EB;
+  padding: 5px 10px; }
+  .tool_tip span {
+    background-image: url("../img/icon_brown_close.svg");
+    background-repeat: no-repeat;
+    padding-left: 1.5em; }
+
+/* 日付 曜日カラー設定
+------------------------------------------------- */
+.week.sun {
+  color: #ED1C24; }
+
+.week.sat {
+  color: #0071BC; }
+
+/* -------------------------------------------------------------------------
+
+		layout.sass
+
+		ヘッダー、フッター、サイドバー等のサイトの構造に関わるスタイルを定義
+
+------------------------------------------------------------------------- */
+/* body
+------------------------------------------------- */
+body {
+  font-family: arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  color: #666;
+  min-width: 320px;
+  word-wrap: break-word;
+  word-wrap: break-word; }
+
+/* noscript
+------------------------------------------------- */
+.noscript {
+  background-color: #fff9d7;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: bold; }
+
+.main_container.fixed {
+  margin-top: 44px;
+  /* 固定ヘッダー切り替え */ }
+  .main_container.fixed .page_header {
+    position: fixed;
+    top: -1px;
+    z-index: 1000;
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .3); }
+
+.main_container {
+  /* header
+	------------------------------------------------- */
+  /* 通常ヘッダー */
+  /* パンくず */
+  /* main
+	------------------------------------------------- */
+  /* footer
+	------------------------------------------------- */
+  /* サイドオープン時にメインコンテンツを覆う部分 */ }
+  .main_container .page_header {
+    background-color: #F4F0EB;
+    width: 100%;
+    height: 44px;
+    z-index: 1000;
+    /* /page_header */ }
+    .main_container .page_header .wrap {
+      position: relative;
+      /* メニューボタン */ }
+      .main_container .page_header .wrap .logo {
+        z-index: 1002;
+        position: absolute;
+        top: 0;
+        left: 0; }
+        .main_container .page_header .wrap .logo img {
+          width: 44px;
+          height: 44px; }
+      .main_container .page_header .wrap .title {
+        z-index: 1001;
+        position: absolute;
+        font-size: 11pt;
+        top: 0;
+        left: 0;
+        padding-left: 50px;
+        padding-right: 110px;
+        height: 44px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        /* 縦方向中央揃え（Safari用） */
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        /* 縦方向中央揃え */ }
+      .main_container .page_header .wrap .cart_btn {
+        z-index: 1001;
+        position: absolute;
+        top: 4px;
+        right: 47px;
+        font-size: 12pt;
+        width: 60px;
+        height: 32px;
+        border: solid 2px #754C24;
+        background-color: #ffffff;
+        border-radius: 5px; }
+        .main_container .page_header .wrap .cart_btn a {
+          display: block;
+          height: 32px;
+          width: 60px;
+          height: 32px;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          /* 縦方向中央揃え（Safari用） */
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          /* 縦方向中央揃え */
+          /* 横方向中央揃え（Safari用） */
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          /* 横方向中央揃え */
+          text-decoration: none; }
+      .main_container .page_header .wrap .menu_btn {
+        position: absolute;
+        display: block;
+        top: 0px;
+        right: 0px;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        z-index: 3;
+        border: none;
+        background-color: #754C24;
+        height: 44px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        /* 縦方向中央揃え（Safari用） */
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        /* 縦方向中央揃え */
+        /* 横方向中央揃え（Safari用） */
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        /* 横方向中央揃え */ }
+  .main_container .clumb_list {
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, .2); }
+    .main_container .clumb_list ul {
+      padding-left: 5px; }
+    .main_container .clumb_list li {
+      list-style: none;
+      float: left;
+      padding-left: 5px;
+      font-size: 10pt;
+      height: 40px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      /* 縦方向中央揃え（Safari用） */
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      /* 縦方向中央揃え */ }
+      .main_container .clumb_list li a {
+        padding: 0 15px 0 0;
+        font-size: 10pt;
+        background-image: url(../img/arrow_brown_right.svg);
+        background-size: 10px;
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-margin-top: -2px;
+        height: 40px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        /* 縦方向中央揃え（Safari用） */
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        /* 縦方向中央揃え */ }
+      .main_container .clumb_list li img {
+        margin-right: 3px; }
+  .main_container footer {
+    position: relative;
+    margin-top: 50px;
+    padding: 15px 10px;
+    background-color: #754C24; }
+    .main_container footer h3, .main_container footer th, .main_container footer td, .main_container footer p, .main_container footer a {
+      color: #fff; }
+    .main_container footer h3 {
+      margin-bottom: 10px; }
+    .main_container footer .shop_info {
+      margin-bottom: 30px; }
+      .main_container footer .shop_info th, .main_container footer .shop_info td {
+        text-align: left;
+        font-size: 10pt; }
+    .main_container footer .map {
+      position: absolute;
+      top: 15px;
+      right: 10px; }
+    .main_container footer .copyright {
+      text-align: center;
+      font-size: 10pt;
+      margin-bottom: 20px; }
+    .main_container footer aside > .powerdby {
+      text-align: center;
+      font-size: 10pt;
+      height: 44px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      /* 縦方向中央揃え（Safari用） */
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      /* 縦方向中央揃え */
+      /* 横方向中央揃え（Safari用） */
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      /* 横方向中央揃え */ }
+      .main_container footer aside > .powerdby img {
+        margin-right: 15px; }
+  .main_container .overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    z-index: 1003; }
+  .main_container .overlay::after {
+    visibility: hidden;
+    position: fixed;
+    top: 40%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 50px;
+    color: rgba(255, 255, 255, 0);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease; }
+
+/* gmenu
+------------------------------------------------- */
+/* グローバルメニューオンの時 */
+.gmenu_open .main_container {
+  -webkit-transform: translateX(-260px);
+  transform: translateX(-260px); }
+  .gmenu_open .main_container .overlay {
+    visibility: visible;
+    cursor: pointer;
+    background: rgba(0, 0, 0, .7); }
+  .gmenu_open .main_container .overlay::after {
+    visibility: visible;
+    color: rgba(255, 255, 255, .8); }
+
+.gmenu_open .gmenu {
+  -webkit-transform: none;
+  transform: none;
+  opacity: 1; }
+
+/* ドロワーメニュー */
+.gmenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100%;
+  background: #754C24;
+  -webkit-transform: perspective(500px) rotateY(-90deg);
+  transform: perspective(500px) rotateY(-90deg);
+  opacity: 0;
+  /* メニューボタン(label) */ }
+  .gmenu .close_btn {
+    position: absolute;
+    display: block;
+    top: 0px;
+    right: 0px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    z-index: 3;
+    border: none;
+    background-color: #754C24;
+    height: 44px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* 縦方向中央揃え（Safari用） */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* 縦方向中央揃え */
+    /* 横方向中央揃え（Safari用） */
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* 横方向中央揃え */ }
+  .gmenu ul {
+    margin: 15px; }
+    .gmenu ul li {
+      height: 44px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      /* 縦方向中央揃え（Safari用） */
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      /* 縦方向中央揃え */ }
+      .gmenu ul li a {
+        color: #fff; }
+    .gmenu ul .top {
+      background-image: url("../img/icon_white_home.svg");
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: 5px center;
+      padding-left: 2em; }
+    .gmenu ul .info {
+      background-image: url("../img/icon_white_info.svg");
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: 5px center;
+      padding-left: 2em; }
+    .gmenu ul .fresh {
+      background-image: url("../img/icon_white_freash.svg");
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: 5px center;
+      padding-left: 2em; }
+    .gmenu ul .menu {
+      background-image: url("../img/icon_white_menu.svg");
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: 5px center;
+      padding-left: 2em; }
+    .gmenu ul .shop {
+      background-image: url("../img/icon_white_shop.svg");
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: 5px center;
+      padding-left: 2em; }
+    .gmenu ul .cart {
+      background-image: url("../img/icon_white_cart.svg");
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: 5px center;
+      padding-left: 2em; }
+    .gmenu ul .mypage {
+      background-image: url("../img/icon_white_mypage.svg");
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: 5px center;
+      padding-left: 2em; }
+  .gmenu .menu_btn {
+    position: fixed;
+    display: block;
+    top: 0px;
+    right: 0px;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    z-index: 3;
+    border: none;
+    background-color: #754C24;
+    height: 44px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* 縦方向中央揃え（Safari用） */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* 縦方向中央揃え */
+    /* 横方向中央揃え（Safari用） */
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* 横方向中央揃え */ }
+
+/* popup
+------------------------------------------------- */
+.popup_overlay {
+  position: relative;
+  visibility: visible;
+  cursor: pointer;
+  background: rgba(0, 0, 0, .7);
+  padding: 15px 10px;
+  z-index: 5000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: scroll; }
+  .popup_overlay .popup {
+    padding: 10px 15px 20px 15px;
+    background-color: #fff; }
+    .popup_overlay .popup > header {
+      height: 44px; }
+      .popup_overlay .popup > header .close_btn {
+        float: right; }
+        .popup_overlay .popup > header .close_btn button {
+          width: 44px;
+          height: 44px;
+          cursor: pointer;
+          border: none;
+          background: none; }
+      .popup_overlay .popup > header .title {
+        height: 40px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        /* 縦方向中央揃え（Safari用） */
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        /* 縦方向中央揃え */ }
+
+.popup_bg::after {
+  visibility: visible;
+  color: rgba(255, 255, 255, .8); }
+
+.popup.calendar {
+  max-width: 370px;
+  margin: 30px auto; }
+
+.popup.item_reserve {
+  max-width: 320px;
+  max-height: 220px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto; }
+
+/* -------------------------------------------------------------------------
+
+		index.sass
+
+		総合トップ、センタートップのスタイルを定義
+
+------------------------------------------------------------------------- */
+body.index .main_container.fixed .page_header .wrap .logo {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
+
+body.index .main_container.fixed .page_header .wrap .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+body.index .main_container.fixed .info_list {
+  margin-top: 314px; }
+
+body.index .main_container {
+  /* page_header
+		------------------------------------------------- */
+  /* page_header
+		------------------------------------------------- */
+  /* info
+		------------------------------------------------- */ }
+  body.index .main_container .page_header .wrap .logo {
+    display: none; }
+  body.index .main_container .page_header .wrap .title {
+    display: none; }
+  body.index .main_container main > header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 250px;
+    /* メインボタン */ }
+    body.index .main_container main > header .logo img {
+      position: absolute;
+      width: 88px;
+      height: 88px;
+      top: 10px;
+      left: 10px;
+      border: 5px solid #fff; }
+    body.index .main_container main > header .title {
+      position: absolute;
+      top: 140px;
+      left: 10px;
+      z-index: 1;
+      padding: 0px 155px 0 0;
+      font-size: 12pt;
+      color: #fff;
+      height: 60px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      /* 縦方向中央揃え（Safari用） */
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      /* 縦方向中央揃え */ }
+    body.index .main_container main > header .main_image {
+      height: 250px;
+      width: 100%;
+      overflow: hidden; }
+      body.index .main_container main > header .main_image img {
+        width: 100%; }
+    body.index .main_container main > header .shop_info {
+      position: absolute;
+      top: 145px;
+      height: 105px;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .5); }
+      body.index .main_container main > header .shop_info table {
+        width: 135px;
+        position: absolute;
+        top: 5px;
+        right: 10px; }
+        body.index .main_container main > header .shop_info table th, body.index .main_container main > header .shop_info table td {
+          color: #fff;
+          font-size: 10pt; }
+        body.index .main_container main > header .shop_info table th {
+          text-align: left;
+          width: 4.2em;
+          font-size: 9pt;
+          font-weight: normal; }
+    body.index .main_container main > header nav {
+      position: relative;
+      top: -50px;
+      overflow: hidden;
+      height: 90px; }
+      body.index .main_container main > header nav ul {
+        width: 100%;
+        margin-left: 5px;
+        position: relative;
+        left: 50%;
+        float: left; }
+        body.index .main_container main > header nav ul li {
+          position: relative;
+          left: -50%;
+          width: 33%;
+          height: 88px;
+          text-align: center;
+          float: left; }
+          body.index .main_container main > header nav ul li > div {
+            width: 95%;
+            margin-right: 0;
+            background-color: #F4F0EB;
+            border-radius: 3px;
+            -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, .3); }
+          body.index .main_container main > header nav ul li a {
+            display: block;
+            width: 98%;
+            height: 88px;
+            line-height: 1.3; }
+            body.index .main_container main > header nav ul li a .icon {
+              padding-top: 0px;
+              height: 40px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              /* 縦方向中央揃え（Safari用） */
+              -webkit-box-align: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              /* 縦方向中央揃え */
+              /* 横方向中央揃え（Safari用） */
+              -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                      justify-content: center;
+              /* 横方向中央揃え */ }
+            body.index .main_container main > header nav ul li a span {
+              font-size: 8pt; }
+        body.index .main_container main > header nav ul li:last-child > div {
+          margin-right: 0; }
+  body.index .main_container .info_list {
+    margin: 270px 10px 10px 10px; }
+    body.index .main_container .info_list > .title {
+      margin-bottom: 10px;
+      font-size: 14pt;
+      background-image: url("../img/icon_brown_info.svg");
+      background-repeat: no-repeat;
+      padding-left: 1.5em; }
+    body.index .main_container .info_list section.info {
+      padding: 10px 10px 10px 130px;
+      border-bottom: 1px solid #C7B299;
+      position: relative;
+      background-image: url("../img/arrow_brown_right.svg");
+      background-repeat: no-repeat;
+      background-size: 10px;
+      background-position: right center; }
+      body.index .main_container .info_list section.info a {
+        display: block; }
+      body.index .main_container .info_list section.info .thumb {
+        position: absolute;
+        top: 15px;
+        left: 5px; }
+        body.index .main_container .info_list section.info .thumb img {
+          width: 110px; }
+      body.index .main_container .info_list section.info .meta {
+        margin-bottom: 5px; }
+        body.index .main_container .info_list section.info .meta .date {
+          font-size: 10pt;
+          color: #999; }
+        body.index .main_container .info_list section.info .meta .category {
+          margin-left: 5px; }
+      body.index .main_container .info_list section.info .title {
+        font-weight: normal;
+        font-size: 13pt;
+        margin-bottom: 6px;
+        color: #333; }
+      body.index .main_container .info_list section.info .comment {
+        font-size: 11pt; }
+    body.index .main_container .info_list .more {
+      text-align: center;
+      margin: 10px 0; }
+      body.index .main_container .info_list .more a {
+        background-image: url("../img/arrow_brown_right.svg");
+        background-repeat: no-repeat;
+        padding-left: 1.5em; }
+
+/* -------------------------------------------------------------------------
+
+		info.sass
+
+		総合トップ、センタートップのスタイルを定義
+
+------------------------------------------------------------------------- */
+body.info {
+  /* info
+	------------------------------------------------- */ }
+  body.info .info_list {
+    margin: 10px 10px 10px 10px; }
+    body.info .info_list > .title {
+      margin-bottom: 10px;
+      font-size: 14pt;
+      background-image: url("../img/icon_brown_info.svg");
+      background-repeat: no-repeat;
+      padding-left: 1.5em; }
+    body.info .info_list section.info {
+      padding: 10px 10px 10px 130px;
+      border-bottom: 1px solid #C7B299;
+      position: relative;
+      background-image: url("../img/arrow_brown_right.svg");
+      background-repeat: no-repeat;
+      background-size: 10px;
+      background-position: right center; }
+      body.info .info_list section.info a {
+        display: block; }
+      body.info .info_list section.info .thumb {
+        position: absolute;
+        top: 15px;
+        left: 5px; }
+        body.info .info_list section.info .thumb img {
+          width: 110px; }
+      body.info .info_list section.info .meta {
+        margin-bottom: 5px; }
+        body.info .info_list section.info .meta .date {
+          font-size: 10pt;
+          color: #999; }
+        body.info .info_list section.info .meta .category {
+          margin-left: 5px; }
+      body.info .info_list section.info .title {
+        font-weight: normal;
+        font-size: 13pt;
+        margin-bottom: 6px;
+        color: #333; }
+      body.info .info_list section.info .comment {
+        font-size: 11pt; }
+    body.info .info_list .more {
+      text-align: center;
+      margin: 10px 0; }
+      body.info .info_list .more a {
+        background-image: url("../img/arrow_brown_right.svg");
+        background-repeat: no-repeat;
+        padding-left: 1.5em; }
+
+/* -------------------------------------------------------------------------
+
+		info_detail.sass
+
+		お知らせ詳細のスタイルを定義
+
+------------------------------------------------------------------------- */
+body.info_detail {
+  /* info
+	------------------------------------------------- */ }
+  body.info_detail .info {
+    margin: 10px; }
+    body.info_detail .info .meta {
+      margin-bottom: 10px; }
+      body.info_detail .info .meta .date {
+        font-size: 11pt;
+        color: #999; }
+      body.info_detail .info .meta .category {
+        margin-left: 5px; }
+    body.info_detail .info .title {
+      font-weight: normal;
+      font-size: 15pt;
+      margin-bottom: 20px;
+      color: #333; }
+    body.info_detail .info .img {
+      margin-bottom: 20px; }
+
+/* -------------------------------------------------------------------------
+
+		hoyahoya.sass
+
+		できたて情報のスタイルを定義
+
+------------------------------------------------------------------------- */
+body.hoyahoya {
+  /* ヘッダーFix時
+	------------------------------------------------- */
+  /* current_date
+	------------------------------------------------- */
+  /* time_table
+	------------------------------------------------- */ }
+  body.hoyahoya .main_container .clumb_list {
+    margin-bottom: 10px; }
+  body.hoyahoya .fixed .current_date_fix {
+    display: block;
+    position: fixed; }
+  body.hoyahoya .current_date {
+    cursor: pointer;
+    padding-bottom: 7px; }
+    body.hoyahoya .current_date .change {
+      display: block;
+      float: right;
+      font-size: 11pt;
+      background-image: url("../img/icon_brown_calendar.svg");
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: 5px center;
+      padding-left: 2em;
+      margin: 5px 10px 0 0;
+      background-position: 10px 3px; }
+    body.hoyahoya .current_date .day {
+      margin-left: 10px;
+      font-size: 15pt; }
+      body.hoyahoya .current_date .day span {
+        font-size: 15pt; }
+      body.hoyahoya .current_date .day span.sun {
+        color: #ED1C24; }
+      body.hoyahoya .current_date .day span.sat {
+        color: #0071BC; }
+  body.hoyahoya .current_date_fix {
+    cursor: pointer;
+    display: none;
+    top: 50px;
+    left: 5px;
+    z-index: 2000;
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 4px 4px 2px 4px;
+    background-image: url("../img/icon_brown_calendar.svg");
+    background-repeat: no-repeat;
+    background-size: 22px;
+    background-position: right 5px center;
+    padding-right: 2em; }
+    body.hoyahoya .current_date_fix .day {
+      font-size: 13pt; }
+      body.hoyahoya .current_date_fix .day span {
+        font-size: 13pt; }
+  body.hoyahoya .time_table {
+    position: relative;
+    background-image: url(../img/hoyahoya_timeline_bg.png);
+    background-repeat: repeat-y;
+    background-position: 27px; }
+    body.hoyahoya .time_table .current_time {
+      background-color: #7cf7d8;
+      opacity: 0.5;
+      height: 5px;
+      position: absolute;
+      width: 100%;
+      left: 0px;
+      z-index: 2000; }
+    body.hoyahoya .time_table li.hour:nth-child(odd) {
+      background-color: rgba(248, 246, 243, .5); }
+    body.hoyahoya .time_table li.hour {
+      position: relative;
+      padding: 8px 0 0 0;
+      border-bottom: 1px solid #eee; }
+      body.hoyahoya .time_table li.hour > .time {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background-color: #fff;
+        border: 1px solid #eee;
+        padding: 3px 2px 1px 2px;
+        line-height: 1; }
+      body.hoyahoya .time_table li.hour .section {
+        position: relative;
+        padding-left: 60px;
+        padding-right: 10px;
+        margin: 0 0 10px 0; }
+        body.hoyahoya .time_table li.hour .section .minute {
+          position: absolute;
+          left: 33px;
+          top: 0;
+          color: #999;
+          font-size: 10pt; }
+        body.hoyahoya .time_table li.hour .section .item {
+          position: relative;
+          margin-bottom: 4px;
+          border: 1px solid #eee;
+          background-color: #fff;
+          height: 44px;
+          -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, .2); }
+          body.hoyahoya .time_table li.hour .section .item .thumb {
+            position: absolute;
+            top: 0;
+            left: 0; }
+            body.hoyahoya .time_table li.hour .section .item .thumb img {
+              width: 44px; }
+          body.hoyahoya .time_table li.hour .section .item .title {
+            padding: 0 65px 0 50px;
+            font-size: 9pt;
+            font-weight: normal;
+            line-height: 1.1;
+            margin: 8px 0 0 0; }
+          body.hoyahoya .time_table li.hour .section .item .stock {
+            padding-left: 50px;
+            font-size: 8pt;
+            color: #999; }
+            body.hoyahoya .time_table li.hour .section .item .stock span {
+              font-size: 11pt; }
+          body.hoyahoya .time_table li.hour .section .item .status {
+            position: absolute;
+            right: 5px;
+            top: 11px;
+            font-size: 8pt;
+            padding: 1px 3px; }
+        body.hoyahoya .time_table li.hour .section .item.close {
+          background-color: #ddd; }
+          body.hoyahoya .time_table li.hour .section .item.close .title {
+            color: #999; }
+          body.hoyahoya .time_table li.hour .section .item.close .stock span {
+            color: #999; }
+          body.hoyahoya .time_table li.hour .section .item.close .status {
+            border-color: #999;
+            background-color: #999;
+            color: #fff; }
+  body.hoyahoya .popup.item_reserve .title-pop {
+    font-weight: normal; }
+    body.hoyahoya .popup.item_reserve .title-pop b {
+      font-size: 16pt; }
+  body.hoyahoya .popup.item_reserve .col2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 20px; }
+    body.hoyahoya .popup.item_reserve .col2 .thumb-pop {
+      width: 100px; }
+      body.hoyahoya .popup.item_reserve .col2 .thumb-pop img {
+        width: 100px; }
+    body.hoyahoya .popup.item_reserve .col2 .info-pop {
+      padding-left: 10px; }
+      body.hoyahoya .popup.item_reserve .col2 .info-pop h3.title-pop {
+        font-size: 14pt;
+        font-weight: bold; }
+      body.hoyahoya .popup.item_reserve .col2 .info-pop .stock-pop b {
+        font-size: 14pt; }
+
+/* -------------------------------------------------------------------------
+
+		menu_list.sass
+
+		メニュー一覧のスタイルを定義
+
+------------------------------------------------------------------------- */
+body.menu_list {
+  /* category
+	------------------------------------------------- */
+  /* menus
+	------------------------------------------------- */ }
+  body.menu_list .category {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #754C24;
+    color: #fff;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* 縦方向中央揃え（Safari用） */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* 縦方向中央揃え */
+    /* 横方向中央揃え（Safari用） */
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* 横方向中央揃え */ }
+  body.menu_list ul.menus {
+    margin: 0 0 10px 10px; }
+    body.menu_list ul.menus li {
+      width: 110px;
+      margin: 0 10px 20px 0;
+      text-align: center;
+      float: left; }
+      body.menu_list ul.menus li .title {
+        text-align: center;
+        font-size: 10pt; }
+      body.menu_list ul.menus li .status {
+        font-size: 8pt;
+        width: 5em;
+        margin: 0 auto;
+        height: 18px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        /* 縦方向中央揃え（Safari用） */
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        /* 縦方向中央揃え */
+        /* 横方向中央揃え（Safari用） */
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        /* 横方向中央揃え */ }
+      body.menu_list ul.menus li .status.none {
+        border-color: #fff; }
+
+/* -------------------------------------------------------------------------
+
+		menu_detail.sass
+
+		メニュー詳細のスタイルを定義
+
+------------------------------------------------------------------------- */
+body.menu_detail {
+  /* swiper-container
+	------------------------------------------------- */ }
+  body.menu_detail article {
+    margin: 0 20px; }
+    body.menu_detail article .meta {
+      float: right; }
+    body.menu_detail article h1.title {
+      font-size: 16pt;
+      margin-bottom: 15px; }
+    body.menu_detail article .price {
+      text-align: right;
+      margin-bottom: 20px; }
+      body.menu_detail article .price span {
+        font-size: 16pt; }
+    body.menu_detail article .catch {
+      font-weight: bold;
+      font-size: 14pt;
+      margin-bottom: 15px; }
+    body.menu_detail article .body {
+      margin-bottom: 15px; }
+    body.menu_detail article .allergy {
+      border-top: 1px solid #C7B299;
+      padding-top: 15px;
+      margin-bottom: 20px; }
+      body.menu_detail article .allergy .title {
+        margin-bottom: 10px; }
+      body.menu_detail article .allergy ul li {
+        float: left;
+        margin: 0 10px 10px 0; }
+        body.menu_detail article .allergy ul li .text_icon {
+          font-size: 12pt;
+          padding: 5px; }
+    body.menu_detail article .reserve {
+      background-color: #F4F0EB;
+      padding: 20px; }
+      body.menu_detail article .reserve .title {
+        margin-bottom: 20px;
+        height: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        /* 縦方向中央揃え（Safari用） */
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        /* 縦方向中央揃え */
+        /* 横方向中央揃え（Safari用） */
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        /* 横方向中央揃え */ }
+        body.menu_detail article .reserve .title img {
+          margin-right: 10px; }
+      body.menu_detail article .reserve .menu_name {
+        margin-bottom: 20px;
+        height: 44px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        /* 縦方向中央揃え（Safari用） */
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        /* 縦方向中央揃え */
+        /* 横方向中央揃え（Safari用） */
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        /* 横方向中央揃え */ }
+        body.menu_detail article .reserve .menu_name img {
+          margin-right: 10px; }
+      body.menu_detail article .reserve .date {
+        margin: 30px auto 20px auto;
+        width: 100%; }
+        body.menu_detail article .reserve .date th {
+          text-align: center;
+          font-weight: normal;
+          padding: 10px 5px 10px 0;
+          width: 4em; }
+        body.menu_detail article .reserve .date .day {
+          width: 10em;
+          background-color: #fff;
+          border: 1px solid #C7B299;
+          padding: 4px 4px 2px 4px;
+          background-image: url("../img/icon_brown_calendar.svg");
+          background-repeat: no-repeat;
+          background-size: 22px;
+          background-position: right 5px center;
+          padding-right: 2em;
+          font-size: 12pt; }
+          body.menu_detail article .reserve .date .day span {
+            font-size: 12pt; }
+      body.menu_detail article .reserve .num {
+        width: 8em;
+        margin: 10px auto 20px auto; }
+      body.menu_detail article .reserve table.schedule_list {
+        width: 100%;
+        margin-bottom: 15px; }
+        body.menu_detail article .reserve table.schedule_list thead td {
+          text-align: center;
+          border-bottom: 1px solid #754C24;
+          color: #754C24;
+          padding: 5px; }
+        body.menu_detail article .reserve table.schedule_list tbody td {
+          text-align: center;
+          border-bottom: 1px solid #C7B299;
+          padding: 10px 5px;
+          font-size: 16pt; }
+        body.menu_detail article .reserve table.schedule_list tbody .time {
+          width: 5em; }
+        body.menu_detail article .reserve table.schedule_list tbody .stock {
+          width: 5em; }
+        body.menu_detail article .reserve table.schedule_list tbody .num input {
+          text-align: right; }
+      body.menu_detail article .reserve .empty {
+        color: #F15A24; }
+      body.menu_detail article .reserve .btn_area {
+        text-align: center; }
+        body.menu_detail article .reserve .btn_area button {
+          margin: 0 auto; }
+    body.menu_detail article .not-reserve {
+      background-color: #F4F0EB;
+      padding: 20px; }
+      body.menu_detail article .not-reserve p {
+        color: #F15A24; }
+  body.menu_detail .swiper-container {
+    margin-bottom: 20px; }
+    body.menu_detail .swiper-container .swiper-pagination-bullet-active {
+      background-color: #754C24; }
+
+/* -------------------------------------------------------------------------
+
+		shop_info.sass
+
+		店舗情報のスタイルを定義
+
+------------------------------------------------------------------------- */
+body.shop_info {
+  /* swiper-container
+	------------------------------------------------- */ }
+  body.shop_info article {
+    position: relative;
+    margin: 0 20px; }
+    body.shop_info article .logo {
+      position: absolute;
+      left: 0;
+      top: 0; }
+    body.shop_info article h1.shop_name {
+      font-size: 16pt;
+      margin-bottom: 15px;
+      height: 88px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      /* 縦方向中央揃え（Safari用） */
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      /* 縦方向中央揃え */
+      padding-left: 100px; }
+    body.shop_info article dl.info {
+      margin-bottom: 15px; }
+      body.shop_info article dl.info dt {
+        color: #754C24;
+        width: 25%;
+        float: left;
+        clear: both;
+        margin-bottom: 8px; }
+      body.shop_info article dl.info dd {
+        float: left;
+        width: 75%;
+        margin-bottom: 8px; }
+        body.shop_info article dl.info dd a.btn {
+          margin-left: 10px; }
+    body.shop_info article .map {
+      margin-bottom: 15px;
+      width: 100%;
+      overflow: hidden; }
+  body.shop_info .swiper-container {
+    margin-bottom: 30px; }
+    body.shop_info .swiper-container h3 {
+      margin: 20px 0 10px 0; }
+    body.shop_info .swiper-container .swiper-pagination-bullet-active {
+      background-color: #754C24; }
+
+.day_select {
+  background-image: url("../img/icon_brown_calendar.svg");
+  background-repeat: no-repeat;
+  background-size: 22px;
+  background-position: right 5px center;
+  padding-right: 2em;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #C7B299;
+  padding: 8px 8px 6px 6px;
+  width: 12em; }
+
+.holiday .sample {
+  float: right;
+  font-size: 10pt; }
+  .holiday .sample span {
+    border: 1px solid #eee;
+    text-align: center;
+    padding: 4px 12px;
+    background-color: #F79C7C;
+    font-size: 9pt; }
+
+.holiday h3 {
+  margin-bottom: 20px; }
+
+.holiday .nav {
+  position: relative; }
+  .holiday .nav a {
+    padding: 8px 15px; }
+  .holiday .nav .prev {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .holiday .nav .next {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .holiday .nav .month {
+    text-align: center;
+    margin-bottom: 10px; }
+
+.holiday table {
+  width: 100%; }
+  .holiday table td.sun {
+    color: #ED1C24; }
+  .holiday table td.sat {
+    color: #0071BC; }
+  .holiday table thead {
+    background-color: #f5f5f5; }
+    .holiday table thead td {
+      text-align: center;
+      padding: 3px 0; }
+  .holiday table tbody td {
+    border: 1px solid #eee;
+    text-align: center; }
+    .holiday table tbody td a, .holiday table tbody td span {
+      display: block;
+      padding: 8px 0; }
+  .holiday table tbody td.other {
+    background-color: #ddd;
+    color: #999; }
+  .holiday table tbody td.holiday {
+    background-color: #F79C7C; }
+  .holiday table tbody td.init_date {
+    background-color: #7cf7d8; }
+
+/* -------------------------------------------------------------------------
+
+		cart.sass
+
+		カートのスタイルを定義
+
+------------------------------------------------------------------------- */
+body.cart {
+  /* 確認画面 */
+  /* 完了画面 */ }
+  body.cart article .cart_list {
+    width: 100%;
+    border-top: 1px solid #eee;
+    margin-bottom: 20px; }
+    body.cart article .cart_list tbody .fade-enter {
+      opacity: 0.01; }
+    body.cart article .cart_list tbody .fade-enter-active {
+      opacity: 1;
+      -webkit-transition: opacity 500ms ease-in;
+      transition: opacity 500ms ease-in; }
+    body.cart article .cart_list tbody .fade-exit {
+      opacity: 1; }
+    body.cart article .cart_list tbody .fade-exit-active {
+      opacity: 0.01;
+      -webkit-transition: opacity 500ms ease-in;
+      transition: opacity 500ms ease-in; }
+    body.cart article .cart_list tbody td {
+      vertical-align: middle;
+      padding: 10px 0 10px;
+      border-bottom: 1px solid #eee; }
+    body.cart article .cart_list tbody .delete {
+      width: 35px; }
+      body.cart article .cart_list tbody .delete button {
+        border: none;
+        background: none;
+        padding: 8px; }
+    body.cart article .cart_list tbody .thumb {
+      width: 55px; }
+    body.cart article .cart_list tbody .name .time {
+      font-size: 8pt;
+      line-height: 1;
+      margin-bottom: 3px; }
+    body.cart article .cart_list tbody .name .title {
+      font-size: 10pt;
+      line-height: 1.2;
+      margin-bottom: 3px; }
+    body.cart article .cart_list tbody .name .stock {
+      font-size: 8pt;
+      line-height: 1; }
+      body.cart article .cart_list tbody .name .stock span {
+        font-size: 9pt; }
+    body.cart article .cart_list tbody .num {
+      text-align: right;
+      padding-right: 10px;
+      width: 10em;
+      font-size: 10pt; }
+      body.cart article .cart_list tbody .num input {
+        font-size: 12pt;
+        text-align: right;
+        margin: 0 4px 0 5px; }
+    body.cart article .cart_list tfoot td {
+      vertical-align: middle;
+      padding: 0px 10px;
+      height: 44px; }
+    body.cart article .cart_list tfoot .all_delete button {
+      height: 44px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      /* 縦方向中央揃え（Safari用） */
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      /* 縦方向中央揃え */ }
+    body.cart article .cart_list tfoot .sum {
+      font-size: 10pt;
+      text-align: right; }
+      body.cart article .cart_list tfoot .sum span {
+        font-size: 16pt;
+        font-weight: bold;
+        margin: 0 5px 0 5px; }
+  body.cart article .reserve_time {
+    background-color: #F4F0EB;
+    padding: 15px 10px;
+    margin-bottom: 20px; }
+    body.cart article .reserve_time table {
+      width: 100%; }
+      body.cart article .reserve_time table th, body.cart article .reserve_time table td {
+        height: 44px;
+        vertical-align: middle; }
+      body.cart article .reserve_time table th {
+        font-weight: normal;
+        font-size: 11pt;
+        padding-right: 10px;
+        text-align: right; }
+      body.cart article .reserve_time table td input, body.cart article .reserve_time table td select {
+        font-size: 13pt; }
+      body.cart article .reserve_time table td button {
+        padding: 4px 10px; }
+    body.cart article .reserve_time .warnning {
+      margin: 0 20px; }
+    body.cart article .reserve_time textarea {
+      width: 90%; }
+  body.cart article.cart_check .reserve_time table th, body.cart article.cart_check .reserve_time table td {
+    height: auto;
+    padding-bottom: 10px;
+    vertical-align: top; }
+  body.cart article.cart_check .reserve_time table td {
+    color: #333; }
+  body.cart article.cart_check .other_comment {
+    margin-bottom: 15px; }
+    body.cart article.cart_check .other_comment h3 {
+      font-size: 11pt; }
+    body.cart article.cart_check .other_comment p {
+      font-size: 11pt; }
+  body.cart article.cart_commit .reserve_time table th, body.cart article.cart_commit .reserve_time table td {
+    height: auto;
+    vertical-align: top; }
+  body.cart article.cart_commit .reserve_time table td {
+    color: #333; }
+  body.cart article.cart_commit p {
+    margin-bottom: 15px; }
+    body.cart article.cart_commit p b {
+      font-size: 16pt; }
+
+/* -------------------------------------------------------------------------
+
+		login.sass
+
+		ログインのスタイルを定義
+
+------------------------------------------------------------------------- */
+.popup_overlay article.login {
+  margin: 0 10px; }
+  .popup_overlay article.login .about {
+    margin: 0 10px 20px 10px;
+    border: 5px solid #C7B299;
+    padding: 15px; }
+    .popup_overlay article.login .about .title {
+      color: #754C24;
+      font-weight: normal;
+      font-size: 11pt;
+      background-image: url("../img/logo.svg");
+      background-repeat: no-repeat;
+      background-size: 50px;
+      background-position: 1em center;
+      padding-left: 2.5em;
+      width: 240px;
+      margin: 0 auto; }
+    .popup_overlay article.login .about p {
+      font-size: 11pt; }
+  .popup_overlay article.login div.login {
+    background-color: #F4F0EB;
+    padding: 15px; }
+    .popup_overlay article.login div.login .title {
+      color: #754C24;
+      border-bottom: 1px solid #C7B299;
+      padding-bottom: 10px; }
+    .popup_overlay article.login div.login p {
+      font-size: 11pt; }
+  .popup_overlay article.login div.social_login {
+    z-index: 1;
+    padding-bottom: 35px; }
+    .popup_overlay article.login div.social_login .btn {
+      width: 240px; }
+  .popup_overlay article.login .select_or {
+    margin: -20px auto -20px auto;
+    z-index: 3;
+    background-color: #C7B299;
+    width: 5em;
+    height: 5em;
+    height: 5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* 縦方向中央揃え（Safari用） */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* 縦方向中央揃え */
+    /* 横方向中央揃え（Safari用） */
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* 横方向中央揃え */
+    border-radius: 100px; }
+  .popup_overlay article.login div.hoyahoya_login {
+    position: relative;
+    padding-top: 35px;
+    z-index: 1; }
+    .popup_overlay article.login div.hoyahoya_login > div.align_c {
+      position: absolute;
+      top: -30px;
+      left: -5px;
+      width: 100%; }
+    .popup_overlay article.login div.hoyahoya_login button.reminder {
+      background-image: url("../img/icon_brown_help.svg");
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position: 1em center;
+      padding-left: 2.5em; }
+  .popup_overlay article.login div.new .title {
+    color: #754C24;
+    border-bottom: 1px solid #C7B299;
+    padding-bottom: 10px; }
+  .popup_overlay article.login div.new .btn {
+    width: 240px; }
+
+.popup_overlay article.passsend .notice {
+  color: #0071BC; }
+
+.popup_overlay article.passsend_commit .not_send {
+  background-color: #F4F0EB;
+  padding: 25px 15px; }
+  .popup_overlay article.passsend_commit .not_send .title {
+    color: #754C24;
+    padding-bottom: 10px; }
+  .popup_overlay article.passsend_commit .not_send ul {
+    list-style: disc;
+    margin-left: 1em; }
+
+/* -------------------------------------------------------------------------
+
+		pass_reset.sass
+
+		パスワードリセットのスタイルを定義
+
+------------------------------------------------------------------------- */
+body.pass_reset article {
+  margin: 0 15px; }
+
+/* -------------------------------------------------------------------------
+
+		signup.sass
+
+		新規登録のスタイルを定義
+
+------------------------------------------------------------------------- */
+body.signup article {
+  margin: 0 10px; }
+  body.signup article .about {
+    margin: 0 10px 20px 10px;
+    border: 5px solid #C7B299;
+    padding: 15px; }
+    body.signup article .about .title {
+      color: #754C24;
+      font-weight: normal;
+      font-size: 11pt;
+      background-image: url("../img/logo.svg");
+      background-repeat: no-repeat;
+      background-size: 50px;
+      background-position: 1em center;
+      padding-left: 2.5em;
+      width: 240px;
+      margin: 0 auto; }
+    body.signup article .about p {
+      font-size: 11pt; }
+  body.signup article div.select {
+    background-color: #F4F0EB;
+    padding: 15px; }
+    body.signup article div.select .title {
+      color: #754C24;
+      border-bottom: 1px solid #C7B299;
+      padding-bottom: 10px; }
+    body.signup article div.select a.link {
+      text-decoration: underline; }
+    body.signup article div.select p {
+      font-size: 11pt; }
+    body.signup article div.select .btn {
+      width: 230px; }
+
+body.signup article.check .col label {
+  color: #999; }
+
+body.signup article.passcode input {
+  font-size: 24pt;
+  width: 4em;
+  text-align: center; }
+
+body.signup article.passcode .not_send {
+  background-color: #F4F0EB;
+  padding: 25px 15px; }
+  body.signup article.passcode .not_send .title {
+    color: #754C24;
+    padding-bottom: 10px; }
+  body.signup article.passcode .not_send ul {
+    list-style: disc;
+    margin-left: 1em; }
+
+/* -------------------------------------------------------------------------
+
+		mypage.sass
+
+		マイページのスタイルを定義
+
+------------------------------------------------------------------------- */
+.mypage article {
+  margin: 0 10px; }
+  .mypage article .reserve_num span {
+    font-weight: bold;
+    font-size: 16pt; }
+  .mypage article div.reserve {
+    background-color: #F4F0EB;
+    padding: 5px 15px 15px 15px;
+    border: 1px solid #C7B299;
+    margin-bottom: 15px; }
+    .mypage article div.reserve .title {
+      background-image: url(../img/arrow_brown_right.svg);
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: 10px;
+      border-bottom: 1px solid #C7B299;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      font-weight: normal; }
+      .mypage article div.reserve .title span {
+        font-weight: bold;
+        font-size: 16pt; }
+    .mypage article div.reserve table {
+      width: 100%; }
+      .mypage article div.reserve table th, .mypage article div.reserve table td {
+        padding: 5px 0;
+        text-align: left; }
+      .mypage article div.reserve table th {
+        font-weight: normal;
+        font-size: 10pt;
+        color: #999;
+        width: 6em; }
+      .mypage article div.reserve table td {
+        font-size: 10pt; }
+        .mypage article div.reserve table td span.num {
+          font-size: 14pt; }
+        .mypage article div.reserve table td span.reservation {
+          color: #0071BC; }
+        .mypage article div.reserve table td span.cancel {
+          color: #ED1C24; }
+  .mypage article a.arrow {
+    background-image: url("../img/arrow_brown_right.svg");
+    background-repeat: no-repeat;
+    padding-left: 1.5em; }
+
+.mypage article.form .current_id {
+  padding: 8px 10px;
+  background-color: #ddd;
+  width: 90%; }
+
+.mypage article.form .notice {
+  color: #0071BC; }
+
+.mypage article.commit .not_send {
+  background-color: #F4F0EB;
+  padding: 25px 15px; }
+  .mypage article.commit .not_send .title {
+    color: #754C24;
+    padding-bottom: 10px; }
+  .mypage article.commit .not_send ul {
+    list-style: disc;
+    margin-left: 1em; }
+
+/* -------------------------------------------------------------------------
+
+		mypage_reserve_list.sass
+
+		マイページ 予約履歴のスタイルを定義
+
+------------------------------------------------------------------------- */
+.mypage_reserve_list article table {
+  width: 100%; }
+  .mypage_reserve_list article table thead td {
+    text-align: center;
+    font-size: 10pt;
+    color: #754C24;
+    border-bottom: 1px solid #C7B299;
+    padding: 0 0 5px 0; }
+  .mypage_reserve_list article table tbody tr.year td {
+    background-color: #F4F0EB;
+    padding: 5px 0 5px 10px; }
+  .mypage_reserve_list article table tbody td {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0; }
+  .mypage_reserve_list article table tbody td.date {
+    padding-left: 5px; }
+    .mypage_reserve_list article table tbody td.date span.week {
+      font-size: 10pt; }
+    .mypage_reserve_list article table tbody td.date .sun {
+      color: #ED1C24; }
+    .mypage_reserve_list article table tbody td.date .sat {
+      color: #0071BC; }
+  .mypage_reserve_list article table tbody td.status {
+    text-align: center; }
+  .mypage_reserve_list article table tbody td.num {
+    font-size: 9pt;
+    text-align: right; }
+
+/* -------------------------------------------------------------------------
+
+		mypage_reserve_detail.sass
+
+		マイページ 予約詳細のスタイルを定義
+
+------------------------------------------------------------------------- */
+.mypage_reserve_detail .cart_list {
+  width: 100%;
+  border-top: 1px solid #eee;
+  margin-bottom: 20px; }
+  .mypage_reserve_detail .cart_list tbody td {
+    vertical-align: middle;
+    padding: 10px 0 10px;
+    border-bottom: 1px solid #eee; }
+  .mypage_reserve_detail .cart_list tbody .delete {
+    width: 35px; }
+    .mypage_reserve_detail .cart_list tbody .delete button {
+      border: none;
+      background: none;
+      padding: 8px; }
+  .mypage_reserve_detail .cart_list tbody .thumb {
+    width: 55px;
+    padding-left: 10px; }
+  .mypage_reserve_detail .cart_list tbody .name .time {
+    font-size: 8pt;
+    line-height: 1;
+    margin-bottom: 3px; }
+  .mypage_reserve_detail .cart_list tbody .name .title {
+    font-size: 10pt;
+    line-height: 1.2;
+    margin-bottom: 3px; }
+  .mypage_reserve_detail .cart_list tbody .name .stock {
+    font-size: 8pt;
+    line-height: 1; }
+    .mypage_reserve_detail .cart_list tbody .name .stock span {
+      font-size: 9pt; }
+  .mypage_reserve_detail .cart_list tbody .num {
+    text-align: right;
+    padding-right: 10px;
+    width: 8.5em;
+    font-size: 10pt; }
+    .mypage_reserve_detail .cart_list tbody .num input {
+      font-size: 12pt;
+      text-align: right;
+      margin: 0 4px 0 5px; }
+  .mypage_reserve_detail .cart_list tfoot td {
+    vertical-align: middle;
+    padding: 0px 10px;
+    height: 44px; }
+  .mypage_reserve_detail .cart_list tfoot .all_delete button {
+    height: 44px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* 縦方向中央揃え（Safari用） */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* 縦方向中央揃え */ }
+  .mypage_reserve_detail .cart_list tfoot .sum {
+    font-size: 10pt;
+    text-align: right; }
+    .mypage_reserve_detail .cart_list tfoot .sum span {
+      font-size: 16pt;
+      font-weight: bold;
+      margin: 0 5px 0 10px; }
+
+.mypage_reserve_detail .reserve_time {
+  background-color: #F4F0EB;
+  padding: 15px 10px;
+  margin-bottom: 0px; }
+  .mypage_reserve_detail .reserve_time table {
+    width: 100%; }
+    .mypage_reserve_detail .reserve_time table th, .mypage_reserve_detail .reserve_time table td {
+      height: 35px;
+      vertical-align: middle; }
+    .mypage_reserve_detail .reserve_time table th {
+      font-weight: normal;
+      font-size: 11pt;
+      padding-right: 10px;
+      color: #999; }
+    .mypage_reserve_detail .reserve_time table td span, .mypage_reserve_detail .reserve_time table td b {
+      font-size: 14pt; }
+    .mypage_reserve_detail .reserve_time table td .reservation {
+      color: #0071BC; }
+    .mypage_reserve_detail .reserve_time table td button {
+      padding: 4px 8px;
+      font-size: 11pt;
+      margin-left: 10px; }
+  .mypage_reserve_detail .reserve_time .warnning {
+    margin: 0 20px; }
+
+.mypage_reserve_detail .other_comment {
+  margin: 0 15px; }
+
+/* -------------------------------------------------------------------------
+
+		print.sass
+		
+		印刷用のスタイルを定義
+		
+------------------------------------------------------------------------- */
+@media print {
+  /* IE zoom
+	------------------------------------------------- */
+  /* for IE6 or older */
+  * html body {
+    zoom: 0.7; }
+  /* for IE7 */
+  * + html body {
+    zoom: 1; }
+  .print_none {
+    display: none; }
+  body.calendar .calendar_header,
+  body.calendar .section_title {
+    width: auto !important;
+    position: static !important; } }

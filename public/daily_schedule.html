@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>スケジュール</title>
+<meta charset="utf-8">
+<meta name="description" content="紹介文">
+<meta name="author" content="HoyaHoya">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/assets/js/gmenu.js"></script>
+<script src="/assets/js/header_fix.js"></script>
+<link rel="stylesheet" href="/assets/css/style.css">
+<!--&#91;if lt IE 9&#93;>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<!&#91;endif&#93;-->
+<link rel="shortcut icon" href="">
+<!-- React Const -->
+<script type="text/javascript">
+  var g_shopId="D9C72A6C-CB9C-483D-AF0F-D4B1812EB22A";
+</script>
+<!-- /React Const -->
+</head>
+<body class="hoyahoya">
+
+  <!-- メニュー展開用コンテンツコンテナ -->
+  <div class="main_container">
+
+    <!-- ヘッダー -->
+    <header class="page_header">
+      <div class="wrap">
+        <div class="logo"><a href="./index.html" title="トップ"><img src="/assets/img/dummy_88_88.svg" alt="ロゴ" width="44px" height="44" /></a></div>
+        <h3 class="title">Sample</h3>
+        <!-- React Component -->
+        <div id="cart_btn"></div>
+        <!-- /React Component -->
+        <button type="button" class="menu_btn"><img src="/assets/img/icon_white_gmenu.svg" width="15px" alt="menu" /></button>
+      </div>
+    </header>
+
+    <!-- パンくずリスト -->
+    <nav class="clumb_list">
+      <ul class="clear_fix">
+        <li><a href="./index.html"><img src="/assets/img/icon_brown_home.svg" alt="店舗トップ" width="15px" /></a></li>
+        <li>スケジュール</li>
+      </ul>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main>
+      <article>
+
+        <!-- React Component -->
+        <div id="daily_schedule"></div>
+        <script type="text/javascript" src="/assets/js/daily_schedule.js"></script>
+        <!-- /React Component -->            
+        
+      </article>
+      <!-- サイドオープン時メインコンテンツを覆う -->
+      <div class="overlay" id="js__overlay"></div>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+    </footer>
+  </div>
+
+  <!-- グローバルメニュー -->
+  <nav class="gmenu">
+    <button type="button" class="close_btn"><img src="/assets/img/icon_white_close.svg" width="15px" alt="close" /></button>
+    <ul>
+      <li class="top"><a href="./index.html" title="トップ">トップ</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>
